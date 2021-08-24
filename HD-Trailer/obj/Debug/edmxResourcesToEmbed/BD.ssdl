@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="db_a78c13_equideModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="usuarios">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="username" Type="nchar" MaxLength="256" Nullable="false" />
+    <Property Name="password" Type="nchar" MaxLength="256" Nullable="false" />
+  </EntityType>
+  <EntityType Name="youtube">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="nombre" Type="nchar" MaxLength="200" Nullable="false" />
+    <Property Name="descripcion" Type="nchar" MaxLength="400" Nullable="false" />
+    <Property Name="url" Type="nchar" MaxLength="200" Nullable="false" />
+  </EntityType>
+  <EntityContainer Name="db_a78c13_equideModelStoreContainer">
+    <EntitySet Name="usuarios" EntityType="Self.usuarios" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="youtube" EntityType="Self.youtube" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

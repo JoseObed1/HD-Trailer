@@ -1,29 +1,51 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <meta charset="utf-8" />
+    <link rel="icon" href="~/Content/img/busqueda.png">
+
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@ViewBag.Title - Mi aplicación ASP.NET</title>
-    @Styles.Render("~/Content/css")
-    @Scripts.Render("~/bundles/modernizr")
+    <title>@ViewBag.Title - ServiTra</title>
+    <link rel="stylesheet" href="~/Content/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link href="~/Content/css/styles.css" rel="stylesheet" />
 </head>
 <body>
-    <div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="navbar navbar-expand-lg navbar-toggleable-lg navbar-light bg-primary border-bottom box-shadow lg-3">
         <div class="container">
             <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                @Html.ActionLink("Nombre de la aplicación", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+                <img src="~/Content/img/busqueda.png" alt="logo" style="height: 50px; width: 50px " />
+                @Html.ActionLink("ServiTra", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
             </div>
-            <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Inicio", "Index", "Home")</li>
-                    <li>@Html.ActionLink("Acerca de", "About", "Home")</li>
-                    <li>@Html.ActionLink("Contacto", "Contact", "Home")</li>
+            <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+                <ul class="navbar-nav flex-grow-1;" style="float:right !important">
+                    <li class="nav-link text-light">
+                        @Html.ActionLink("Inicio", "Index", "Home", new { style = "text-decoration:none; color:white" })
+                    </li>
+                    <li class="nav-link text-light" style="!important;">
+                        @Html.ActionLink("Privacy", "Privacy", "Home", new { style = "text-decoration:none; color:white" })
+                    </li>
+                    <li class="nav-link text-light">
+                        @Html.ActionLink("Sobre Nosotros", "Sobrenosotros", "Home", new { style = "text-decoration:none; color:white" })
+                    </li>
+                </ul>
+                <ul class="nav navbar-nav" style="float:right !important">
+                    @if (Session["UserName"] != null || User.Identity.IsAuthenticated)
+                    {
+                        <li>
+                            <p style="color: #ffffff; margin-top:15px;">Bienvenido, @Session["UserName"]</p>
+                        </li>
+                        <li>
+                            @Html.ActionLink("Log Out", "LogOut", "Home", new { style = "text-decoration:none; color:white" })
+                        </li>
+                    }
+                    else
+                    {
+                        <li>
+                            @Html.ActionLink("Login", "LoginRegister", "Home", new { style = "text-decoration:none; color:white" })
+                        </li>
+                    }
                 </ul>
             </div>
         </div>
@@ -31,13 +53,22 @@
     <div class="container body-content">
         @RenderBody()
         <hr />
-        <footer>
-            <p>&copy; @DateTime.Now.Year - Mi aplicación ASP.NET</p>
+        <footer class="border-top footer text-muted ">
+            <div class="container" style="padding-top:50px">
+                <center>
+                    &copy; 2021 - ServiTra - <a asp-area="" asp-controller="Home" asp-action="sobrenosotros">Grupo 1</a>
+                </center>
+            </div>
         </footer>
     </div>
 
+
     @Scripts.Render("~/bundles/jquery")
-    @Scripts.Render("~/bundles/bootstrap")
+    @*@Scripts.Render("~/Content/lib/jquery/dist/jquery.js")*@
+    @Scripts.Render("~/Content/lib/bootstrap/dist/css/bootstrap.min.css")
+    @Scripts.Render("~/Content/js/site.js")
+    @*@Styles.Render("~/Content/css/Site.css")*@
+    @*<script src="~/Content/js/scripts.js"></script>*@
     @RenderSection("scripts", required: false)
 </body>
 </html>

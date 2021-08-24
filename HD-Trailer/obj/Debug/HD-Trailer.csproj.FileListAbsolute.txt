@@ -84,3 +84,7 @@ D:\Repos\HD-Trailer\HD-Trailer\obj\Debug\HD-Trailer.csproj.CoreCompileInputs.cac
 D:\Repos\HD-Trailer\HD-Trailer\obj\Debug\HD-Trailer.csproj.CopyComplete
 D:\Repos\HD-Trailer\HD-Trailer\obj\Debug\HD-Trailer.dll
 D:\Repos\HD-Trailer\HD-Trailer\obj\Debug\HD-Trailer.pdb
+D:\Repos\HD-Trailer\HD-Trailer\bin\EntityFramework.dll
+D:\Repos\HD-Trailer\HD-Trailer\bin\EntityFramework.SqlServer.dll
+D:\Repos\HD-Trailer\HD-Trailer\bin\EntityFramework.xml
+D:\Repos\HD-Trailer\HD-Trailer\bin\EntityFramework.SqlServer.xml
