@@ -1,0 +1,45 @@
+﻿@model IEnumerable<WebApplication3.App_Data.Foro>
+
+@{
+    ViewBag.Title = "ForosPublicados";
+}
+<script src="~/Content/lib/jquery/dist/jquery.js"></script>
+
+<center><h2>Vacantes Disponibles</h2></center>
+
+<label for="cars">Filtrar por:</label>
+
+<select name="cars" id="cars" class="">
+    <option value="1">Software</option>
+    <option value="2">Seguridad</option>
+    <option value="3">Database</option>
+    <option value="4">Cloud Computing</option>
+    <option value="5">Computer Network Specialist</option>
+    <option value="6">Soporte Informatico</option>
+</select>
+
+<p>
+
+</p>
+
+<div class="row gx-4 gx-lg-5">
+
+    @if (Model != null)
+    {
+        foreach (var item in Model)
+        {
+
+            <div class="col-md-4 mb-5">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <h2 class="card-title">@Html.DisplayFor(modelItem => item.Nombre)</h2>
+                        <p class="card-text">@Html.DisplayFor(modelItem => item.Descripcion)</p>
+                    </div>
+                    <div class="card-footer"><a class="btn btn-primary btn-sm" href="@Url.Action("VerForo", "Home", new { id = item.ID_Foro })">Mas Info</a></div>
+                </div>
+            </div>
+        }
+    }
+</div>
+
+

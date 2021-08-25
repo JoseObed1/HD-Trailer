@@ -8,9 +8,11 @@ namespace HD_Trailer.Controllers
 {
     public class HomeController : Controller
     {
+        DBEntity db = new DBEntity();
+
         public ActionResult Index()
         {
-            return View();
+            return View(db.youtube.ToList());
         }
 
         public ActionResult About()
@@ -24,6 +26,11 @@ namespace HD_Trailer.Controllers
         {
             ViewBag.Message = "Your contact page.";
 
+            return View();
+        }
+
+        public ActionResult sobrenosotros()
+        {
             return View();
         }
     }

@@ -1,0 +1,118 @@
+﻿@model WebApplication3.App_Data.Foro
+
+@using (Html.BeginForm("GuardarPost", "Home"))
+{
+
+    <link href="~/css/styles.css" rel="stylesheet" />
+
+    <center>
+        <img src="~/Content/img/blog.png" alt="logo" style="height: 120px; width: 100px ; padding-top: 20px" />
+    </center>
+
+    <div class="mb-3">
+        <label for="validationTextarea" class="form-label" style="padding-top: 30px">Nombre de la Vacante</label>
+        <section>
+            @Html.EditorFor(model => model.Nombre, new { htmlAttributes = new { @class = "form-control forms_field-input", @placeholder = "Nombre Vacante" } })
+            @Html.ValidationMessageFor(model => model.Nombre, "", new { @class = "text-danger" })
+        </section>
+        <div class="invalid-feedback">
+        </div>
+    </div>
+
+    <div class="mb-3">
+        <label for="validationTextarea" class="form-label" style="padding-top: 15px">Requisitos para cumplir con el puesto</label><br />
+        @Html.TextAreaFor(model => model.Descripcion, new { @class = "form-control forms_field-input", @placeholder = "Informacion necesaria..." })
+        @*
+            <textarea class="form-control is-invalid" id="validationTextarea" required @Html.EditorFor(model => model.Descripcion, new { htmlAttributes = new { @class = "form-control forms_field-input", @placeholder = "Informacion necesaria..." } })</textarea>
+        *@
+        @Html.ValidationMessageFor(model => model.Descripcion, "", new { @class = "text-danger" })
+        <div class="invalid-feedback">
+        </div>
+    </div>
+
+    <div class="mb-3">
+        <label for="validationTextarea" class="form-label" style="padding-top: 15px">Categoria:</label>
+        <select class="form-select" required aria-label="select example" name="selec" runat="server">
+            <option value="1">Software</option>
+            <option value="2">Seguridad</option>
+            <option value="3">Database</option>
+            <option value="4">Cloud Computing</option>
+            <option value="5">Computer Network Specialist</option>
+            <option value="6">Soporte Informatico</option>
+        </select>
+    </div>
+
+        <div class="mb-3">
+            <label for="validationTextarea" class="form-label" style="padding-top: 15px">Cantidad de Vacantes</label>
+            <select class="form-select" required aria-label="select example">
+                <option value="">Numero de vacantes disponibles</option>
+                <option value="1">Uno</option>
+                <option value="2">Dos</option>
+                <option value="3">Tres</option>
+                <option value="3">Cinco</option>
+                <option value="3">Diez</option>
+                <option value="3">Quince</option>
+                <option value="3">Mas de Veinte</option>
+            </select>
+            <div class="invalid-feedback">No dejar vacio</div>
+        </div>
+
+        <div class="mb-3">
+            <label for="validationTextarea" class="form-label" style="padding-top: 15px">Correo de la Empresa</label>
+            <section>
+                @Html.EditorFor(model => model.Correo_Compania, new { htmlAttributes = new { @class = "form-control forms_field-input", @placeholder = "Detalle su correo aqui..." } })
+                @Html.ValidationMessageFor(model => model.Correo_Compania, "", new { @class = "text-danger" })
+            </section>
+            <div class="invalid-feedback">
+            </div>
+        </div>
+
+        <div class="mb-3">
+            <label for="validationTextarea" class="form-label" style="padding-top: 15px">Ubicacion de la Compañia</label>
+            @Html.TextAreaFor(model => model.Ubicacion, new { @class = "form-control is-invalid" })
+            @*
+                <textarea class="form-control is-invalid" id="validationTextarea" required @Html.EditorFor(model => model.Ubicacion, new { htmlAttributes = new { @class = "form-control forms_field-input", @placeholder = "Ubicacion exacta..." } })</textarea>
+            *@
+            @Html.ValidationMessageFor(model => model.Ubicacion, "", new { @class = "text-danger" })
+            <div class="invalid-feedback">
+            </div>
+        </div>
+
+        <div class="mb-3">
+            <label for="validationTextarea" class="form-label" style="padding-top: 15px">URL</label>
+            <section>
+                @Html.EditorFor(model => model.Url, new { htmlAttributes = new { @class = "form-control forms_field-input", @placeholder = "Pegue el URL de la pagina de la Compañia aqui..." } })
+                @Html.ValidationMessageFor(model => model.Url, "", new { @class = "text-danger" })
+            </section>
+            <div class="invalid-feedback">
+            </div>
+        </div>
+
+        <div class="mb-3">
+            <label for="validationTextarea" class="form-label" style="padding-top: 15px">Autor</label>
+            <section>
+                @Html.EditorFor(model => model.Autor, new { htmlAttributes = new { @class = "form-control forms_field-input", @placeholder = "Autor de quien publica la vacante" } })
+                @Html.ValidationMessageFor(model => model.Autor, "", new { @class = "text-danger" })
+            </section>
+            <div class="invalid-feedback">
+            </div>
+        </div>
+
+        <div class="mb-3">
+            <label for="validationTextarea" class="form-label" style="padding-top: 15px">Logo de la Compañia</label>
+
+            <input type="file" class="form-control" aria-label="file example">
+            @*<div class="invalid-feedback">Logo </div>*@
+        </div>
+
+        <div class="form-check mb-3">
+            <input type="checkbox" class="form-check-input" id="validationFormCheck1" style="padding-top: 15px" required>
+            <label class="form-check-label" for="validationFormCheck1">Eres humano?</label>
+            <div class="invalid-feedback">Click Aqui!</div>
+        </div>
+
+
+        <div class="mb-3">
+            <button class="btn btn-primary" type="submit"><img src="~/Content/img/publicacion-de-invitado (1).png" style="height:30px ; " width: 30px" /> Crear Post</button>
+        </div>
+        }
