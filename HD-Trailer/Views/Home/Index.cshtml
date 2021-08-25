@@ -25,112 +25,52 @@
             <h1 class="font-weight-light">¿Estas buscando los mejores trailers de pelicula?</h1>
             <p>Estas en el lugar correcto! Tenemos todos los trailers del momento, puestos al alcance de tu mano!</p>
 
-            <a style="color:white; margin-left:20%" class="btn btn-primary"  href="nuevoPost"><img src="~/Content/img/verMovie.png" style="height:30px ; " width: 30px" /> Mira todos los trailers!</a>
+            <a style="color:white; margin-left:20%" class="btn btn-primary" href="Home/ForosPublicados"><img src="~/Content/img/verMovie.png" style="height:30px ; " width: 30px" /> Mira todos los trailers!</a>
         </div>
     </div>
 
-    <p>
+    @if (User.Identity.IsAuthenticated)
+    {
+        <div>
+            <a style="color:white; margin-left:2%" class="btn btn-primary" href="nuevoPost"><img src="~/Content/img/verMovie.png" style="height:30px ; " width: 30px" /> Agregar trailer </a>
 
-    </p>
+        </div>
+    }
+    else
+    {
+        <div>
+            <a style="color:white; margin-bottom:2%; margin-left:45%" class="btn btn-primary" href="nuevoPost"><img src="~/Content/img/AddMovie.png" style="height:30px ; " width: 30px" /> Agregar trailer </a>
+
+        </div>
+    }
 
     <div class="row gx-4 gx-lg-5">
         @if (Model != null)
         {
-                foreach (var item in Model)
-                {
+            foreach (var item in Model)
+            {
 
-                    <div class="col-md-4 mb-5">
-                        <div class="card h-100">
-                            <div class="card-body">
-                                <h2 class="card-title">@Html.DisplayFor(modelItem => item.nombre)</h2>
-                                <p class="card-text">@Html.DisplayFor(modelItem => item.descripcion)</p>
-                                <iframe width="335" height="315" src="@Html.DisplayFor(modelItem => item.url)" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                            </div>
-                            <div class="card-footer" style="text-align:center"><a class="btn btn-primary btn-sm" href="@Html.DisplayFor(modelItem => item.url)">Ver en YouTube  <img src="~/Content/img/yt.png" style="height:20px ; " width: 20px" /></a></div>
+                <div class="col-md-4 mb-5">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h2 class="card-title">@Html.DisplayFor(modelItem => item.nombre)</h2>
+                            <p class="card-text">@Html.DisplayFor(modelItem => item.descripcion)</p>
+                            <iframe width="335" height="315" src="@Html.DisplayFor(modelItem => item.url)" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                         </div>
+                        @if (User.Identity.IsAuthenticated)
+                        {
+                            <div class="card-footer" style="text-align:center">
+                                <a class="btn btn-primary btn-sm" href="@Html.DisplayFor(modelItem => item.url)">Editar Trailer  <img src="~/Content/img/yt.png" style="height:20px ; " width: 20px" /></a>
+                                <a class="btn btn-primary btn-sm" href="@Html.DisplayFor(modelItem => item.url)">Eliminar Trailer  <img src="~/Content/img/yt.png" style="height:20px ; " width: 20px" /></a>
+                            </div>
+                        }
+                        else
+                        {
+                            <div class="card-footer" style="text-align:center"><a class="btn btn-primary btn-sm" href="@Html.DisplayFor(modelItem => item.url)">Ver en YouTube  <img src="~/Content/img/yt.png" style="height:20px ; " width: 20px" /></a></div>
+                        }
                     </div>
-                }
+                </div>
             }
+        }
     </div>
 </div>
-
-@*@model  IEnumerable<WebApplication3.App_Data.Foro>
-
-    @{
-        ViewData["Title"] = "Home Page";
-    }
-
-    <!DOCTYPE html>
-    <html lang="en">
-
-    <head>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-        <meta name="description" content="" />
-        <meta name="author" content="" />
-        <title>Small Business - Start Bootstrap Template</title>
-        <!-- Favicon-->
-        <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
-        <!-- Core theme CSS (includes Bootstrap)-->
-        <link href="~/Content/css/styles.css" rel="stylesheet" />
-    </head>
-    <body>
-
-        <!-- Page Content-->
-        <div class="container px-4 px-lg-5">
-            <!-- Heading Row-->
-            <div class="row gx-4 gx-lg-5 align-items-center my-5">
-                <div class="col-lg-7"><img class="img-fluid rounded mb-4 mb-lg-0" src="https://rockcontent.com/es/wp-content/uploads/sites/3/2021/04/productividad-en-el-trabajo.png" alt="..." /></div>
-                <div class="col-lg-5">
-                    <h1 class="font-weight-light">Estas buscando trabajo como tecnologo?</h1>
-                    <p>Nuevas ofertas de trabajo para Empresas de Tecnologia cada hora. Empresas confiables. Tiempo completo, medio y parcial. Sin costo, fácil y a la portada de todos!</p>
-
-                    <a class="btn btn-primary" style="color:white" href="nuevoPost"><img src="~/Content/img/agregar-archivo.png" style="height:30px ; " width: 30px" /> Crea un nuevo post!</a>
-                </div>
-            </div>
-
-
-            @foreach( var item in Model.Correo_Compania)
-                {
-
-                }
-
-                <div class="row gx-4 gx-lg-5">
-                    <div class="col-md-4 mb-5">
-                        <div class="card h-100">
-                            <div class="card-body">
-                                <h2 class="card-title">Se solicita tecnologo en Software</h2>
-                                <p class="card-text">Con dominio de C#, Java, HTML y CSS, horario de 8.00 a 16.00 en ...</p>
-                            </div>
-                            <div class="card-footer"><a class="btn btn-primary btn-sm" href="#!">Mas Info</a></div>
-                        </div>
-                    </div>
-                    <div class="col-md-4 mb-5">
-                        <div class="card h-100">
-                            <div class="card-body">
-                                <h2 class="card-title">Urgente necesito digitador</h2>
-                                <p class="card-text">Persona con habilidades en la digitacion, que sea rapido y ....</p>
-                            </div>
-                            <div class="card-footer"><a class="btn btn-primary btn-sm" href="#!">Mas Info</a></div>
-                        </div>
-                    </div>
-                    <div class="col-md-4 mb-5">
-                        <div class="card h-100">
-                            <div class="card-body">
-                                <h2 class="card-title">Programador Junior</h2>
-                                <p class="card-text">Graduados de Software, Ingenieria o carreras a fines con conocimieto en el area de programacion...</p>
-                            </div>
-                            <div class="card-footer"><a class="btn btn-primary btn-sm" href="#!">Mas Info</a></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Footer-->
-            <!-- Bootstrap core JS-->
-            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"></script>
-            <!-- Core theme JS-->
-            <script src="~/Content/js/scripts.js"></script>
-    </body>
-    </html>
-*@

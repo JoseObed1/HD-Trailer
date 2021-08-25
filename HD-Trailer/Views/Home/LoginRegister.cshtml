@@ -1,8 +1,4 @@
-﻿@model WebApplication3.App_Data.Cuentas
-
-    {
-        ViewBag.Title = "Registro";
-    }
+﻿@model HD_Trailer.usuarios
 
 <link href="~/Content/css/styleLR.css" rel="stylesheet" />
 
@@ -13,8 +9,8 @@
                  <center>
                     <img  src="~/Content/img/notas.png" alt="logo" style="height: 70px; width: 70px "/>
                 </center>
-                <h2 class="user_unregistered-title">No tienes cuenta?</h2>
-                <p class="user_unregistered-text">Registrate a ServiTra para que puedas publicar ofertas de trabajo!</p>
+                <h2 class="user_unregistered-title">¿Eres #Eladmin?</h2>
+                <p class="user_unregistered-text">Registra cuentas para otros administradores!</p>
                 <button class="user_unregistered-signup" id="signup-button">Registrate</button>
             </div>
 
@@ -22,8 +18,8 @@
                 <center>
                     <img  src="~/Content/img/cerrajero.png" alt="logo" style="height: 70px; width: 70px "/>
                 </center>
-                <h2 class="user_registered-title">Ya tienes una cuenta en ServiTra?</h2>
-                <p class="user_registered-text">Accede a tu cuenta.</p>
+                <h2 class="user_registered-title">¿Quieres agregar nuevas peliculas?</h2>
+                <p class="user_registered-text">Accede a tu cuenta de admin.</p>
 
                 <button class="user_registered-login" id="login-button">Inicia Sesion</button>
             </div>
@@ -39,23 +35,19 @@
                         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
                         <fieldset class="forms_fieldset">
                             <div class="forms_field">
-                                @Html.EditorFor(model => model.Correo, new { htmlAttributes = new { @class = "form-control forms_field-input", @placeholder = "E-mail" } })
-                                @Html.ValidationMessageFor(model => model.Correo, "", new { @class = "text-danger" })
+                                @Html.EditorFor(model => model.username, new { htmlAttributes = new { @class = "form-control forms_field-input", @placeholder = "E-mail" } })
+                                @Html.ValidationMessageFor(model => model.username, "", new { @class = "text-danger" })
                             </div>
                             <div class="forms_field">
 
-                                @Html.EditorFor(model => model.Password, new { htmlAttributes = new { @type = "password", @class = "form-control forms_field-input", @placeholder = "Password" } })
-                                @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
+                                @Html.EditorFor(model => model.password, new { htmlAttributes = new { @type = "password", @class = "form-control forms_field-input", @placeholder = "Password" } })
+                                @Html.ValidationMessageFor(model => model.password, "", new { @class = "text-danger" })
                             </div>
                         </fieldset>
 
                         <div class="forms_buttons">
                             <input type="submit" value="Accede" class="forms_buttons-action">
 
-                        </div>
-
-                        <div class="forms_buttons">
-                            <a class="forms_buttons-action" href="@Url.Action("ForosPublicados", "Home")">Ingresar sin cuenta</a>
                         </div>
 
                         <div class="form-group">
@@ -75,20 +67,12 @@
                         <fieldset class="forms_fieldset">
                             
                             <div class="forms_field">
-                                @Html.EditorFor(model1 => model1.Username, new { htmlAttributes = new { @class = "form-control forms_field-input", @placeholder = "Nombre" } })
-                                @Html.ValidationMessageFor(model => model.Username, "", new { @class = "text-danger" })
+                                @Html.EditorFor(model1 => model1.username, new { htmlAttributes = new { @class = "form-control forms_field-input", @placeholder = "Nombre" } })
+                                @Html.ValidationMessageFor(model => model.username, "", new { @class = "text-danger" })
                             </div>
                             <div class="forms_field">
-                                @Html.EditorFor(model1 => model1.Compania, new { htmlAttributes = new { @class = "form-control forms_field-input", @placeholder = "Compañia" } })
-                                @Html.ValidationMessageFor(model => model.Compania, "", new { @class = "text-danger" })
-                            </div>
-                            <div class="forms_field">
-                                @Html.EditorFor(model1 => model1.Correo, new { htmlAttributes = new { @class = "form-control forms_field-input", @placeholder = "E-Mail" } })
-                                @Html.ValidationMessageFor(model => model.Correo, "", new { @class = "text-danger" })
-                            </div>
-                            <div class="forms_field">
-                                @Html.EditorFor(model1 => model1.Password, new { htmlAttributes = new { @class = "form-control forms_field-input", @placeholder = "Password" } })
-                                @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
+                                @Html.EditorFor(model1 => model1.password, new { htmlAttributes = new { @class = "form-control forms_field-input", @placeholder = "Password" } })
+                                @Html.ValidationMessageFor(model => model.password, "", new { @class = "text-danger" })
                             </div>
 
                         </fieldset>
