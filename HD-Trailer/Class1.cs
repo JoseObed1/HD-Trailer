@@ -36,6 +36,13 @@ namespace HD_Trailer
             db.SaveChanges();
         }
 
+        public void deleteMovie(int id)
+        {
+            usuarios tempo = db.usuarios.Find(id);
+            db.usuarios.Remove(tempo);
+            db.SaveChanges();
+        }
+
         /*
         public bool ValidarLogin(string correo, string contra)
         {

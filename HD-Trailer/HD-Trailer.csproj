@@ -278,6 +278,8 @@
     <Content Include="Views\Home\Registro.cshtml" />
     <Content Include="Views\Home\Sobrenosotros.cshtml" />
     <Content Include="Views\Home\LogOut.cshtml" />
+    <Content Include="Views\Home\Delete.cshtml" />
+    <Content Include="Views\Home\Edit.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
