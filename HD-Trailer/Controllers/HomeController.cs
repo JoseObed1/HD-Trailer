@@ -16,7 +16,9 @@ namespace HD_Trailer.Controllers
 
         public ActionResult Index()
         {
-            return View(db.youtube.ToList());
+            List<HD_Trailer.youtube> trailers = db.youtube.ToList();
+            trailers.Reverse();
+            return View(trailers);
         }
 
         public ActionResult ForosPublicados()
