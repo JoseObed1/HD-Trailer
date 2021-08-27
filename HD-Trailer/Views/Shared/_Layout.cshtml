@@ -12,7 +12,7 @@
     <link href="~/Content/css/styles.css" rel="stylesheet" />
 </head>
 <body>
-    <div class="navbar navbar-expand-lg navbar-toggleable-lg navbar-light bg-primary border-bottom box-shadow lg-3">
+    <div class="navbar navbar-expand-lg navbar-toggleable-lg navbar-light bg-danger border-bottom box-shadow lg-3">
         <div class="container">
             <div class="navbar-header">
                 <img src="~/Content/img/logo.png" alt="logo" style="height: 50px; width: 50px " />
@@ -34,13 +34,13 @@
                             <p style="color: #ffffff; margin-top:15px;">Bienvenido, @Session["UserName"]</p>
                         </li>
                         <li>
-                            @Html.ActionLink("Log Out", "LogOut", "Home", new { style = "text-decoration:none; color:white" })
+                            @Html.ActionLink("Log Out", "LogOut", "Home", new { style = "text-decoration:none; color:white; padding-left:40px" }); 
                         </li>
                     }
                     else
                     {
                         <li>
-                            @Html.ActionLink("Login", "LoginRegister", "Home", new { style = "text-decoration:none; color:white" })
+                            @Html.ActionLink("Login", "LoginRegister", "Home", new { style = "text-decoration:none; color:white; padding-left:40px" })
                         </li>
                     }
                 </ul>

@@ -10,7 +10,7 @@
     </center>
 
     <div class="mb-3">
-        <label for="validationTextarea" class="form-label" style="padding-top: 30px">Titulo del trailer</label>
+        <label for="validationTextarea" class="form-label" style="padding-top: 30px ;color:#dc3545">Titulo del trailer</label>
         <section>
             @Html.EditorFor(model => model.nombre, new { htmlAttributes = new { @class = "form-control forms_field-input", @placeholder = "Nombre de la pelicula" } })
             @Html.ValidationMessageFor(model => model.nombre, "", new { @class = "text-danger" })
@@ -20,7 +20,7 @@
     </div>
 
     <div class="mb-3">
-        <label for="validationTextarea" class="form-label" style="padding-top: 15px">Descripcion del trailer</label><br />
+        <label for="validationTextarea" class="form-label" style="padding-top: 15px  ;color:#dc3545">Descripcion del trailer</label><br />
         @Html.TextAreaFor(model => model.descripcion, new { @class = "form-control forms_field-input", @placeholder = "Informacion necesaria..." })
         @*
             <textarea class="form-control is-invalid" id="validationTextarea" required @Html.EditorFor(model => model.Descripcion, new { htmlAttributes = new { @class = "form-control forms_field-input", @placeholder = "Informacion necesaria..." } })</textarea>
@@ -31,7 +31,7 @@
     </div>
 
         <div class="mb-3">
-            <label for="validationTextarea" class="form-label" style="padding-top: 15px">Enlace del trailer</label>
+            <label for="validationTextarea" class="form-label" style="padding-top: 15px  ;color:#dc3545">Enlace del trailer</label>
             <section>
                 @Html.EditorFor(model => model.url, new { htmlAttributes = new { @class = "form-control forms_field-input", @placeholder = "Enlace al video en youtube, en formato embed: (https://www.youtube.com/embed/03Ek_0F36BI)" } })
                 @Html.ValidationMessageFor(model => model.url, "", new { @class = "text-danger" })
@@ -40,7 +40,9 @@
             </div>
         </div>
 
-        <div class="mb-3">
-            <button class="btn btn-primary" type="submit"><img src="~/Content/img/AddMovie.png" style="height:30px ; " width: 30px" /> Crear Trailer</button>
+        <div class="mb-3" style=" padding-top:30px">
+            <center>
+                <button class="btn btn-warning" type="submit"><img src="~/Content/img/AddMovie.png" style="height:30px ; " width: 30px" /> Publicar Trailer</button>
+            </center>
         </div>
         }

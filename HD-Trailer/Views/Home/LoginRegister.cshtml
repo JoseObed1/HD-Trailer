@@ -5,16 +5,16 @@
 <section class="user">
     <div class="user_options-container">
         <div class="user_options-text">
-            <div class="user_options-unregistered">
+            <div class="user_options-unregistered"style=" background-color: #dc3545">
                  <center>
                     <img  src="~/Content/img/notas.png" alt="logo" style="height: 70px; width: 70px "/>
                 </center>
-                <h2 class="user_unregistered-title">¿Eres #Eladmin?</h2>
+                <h2 class="user_unregistered-title">¿Eres #Admin?</h2>
                 <p class="user_unregistered-text">Registra cuentas para otros administradores!</p>
                 <button class="user_unregistered-signup" id="signup-button">Registrate</button>
             </div>
 
-            <div class="user_options-registered">
+            <div class="user_options-registered"style=" background-color: #dc3545">
                 <center>
                     <img  src="~/Content/img/cerrajero.png" alt="logo" style="height: 70px; width: 70px "/>
                 </center>
@@ -25,7 +25,7 @@
             </div>
         </div>
 
-        <div class="user_options-forms" id="user_options-forms">
+        <div class="user_options-forms" id="user_options-forms" style="background-color:#ffc107">
             <div class="user_forms-login">
                 @using (Html.BeginForm("InicioSesion", "Home"))
                 {
@@ -46,7 +46,7 @@
                         </fieldset>
 
                         <div class="forms_buttons">
-                            <input type="submit" value="Accede" class="forms_buttons-action">
+                            <input type="submit" value="Accede" class="forms_buttons-action" style=" color: #ffc107">
 
                         </div>
 
@@ -71,14 +71,14 @@
                                 @Html.ValidationMessageFor(model => model.username, "", new { @class = "text-danger" })
                             </div>
                             <div class="forms_field">
-                                @Html.EditorFor(model1 => model1.password, new { htmlAttributes = new { @class = "form-control forms_field-input", @placeholder = "Password" } })
+                                @Html.EditorFor(model1 => model1.password, new { htmlAttributes = new { @type = "password", @class = "form-control forms_field-input", @placeholder = "Password" } })
                                 @Html.ValidationMessageFor(model => model.password, "", new { @class = "text-danger" })
                             </div>
 
                         </fieldset>
                         <div class="forms_buttons">
 
-                            <input type="submit" value="Registrate" class="forms_buttons-action">
+                            <input type="submit" value="Registrate" class="forms_buttons-action" style=" color: #ffc107">
                         </div>
                         <div class="form-group">
                             <div class="col-md-offset-2 col-md-10">

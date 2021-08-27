@@ -22,17 +22,17 @@
     <div class="row gx-4 gx-lg-5 align-items-center my-5">
         <div class="col-lg-7"><img class="img-fluid rounded mb-4 mb-lg-0" src="https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/best-movies-1614634680.jpg" alt="..." /></div>
         <div class="col-lg-5">
-            <h1 class="font-weight-light">¿Estas buscando los mejores trailers de pelicula?</h1>
+            <h1 class="font-weight-light"style="color: #dc3545">¿Estas buscando los mejores trailers de pelicula?</h1>
             <p>Estas en el lugar correcto! Tenemos todos los trailers del momento, puestos al alcance de tu mano!</p>
 
-            <a style="color:white; margin-left:20%" class="btn btn-primary" href="Home/ForosPublicados"> Mira todos los trailers! <img src="~/Content/img/verMovie.png" style="height:30px ; " width: 30px" /></a>
+            <a style="color:white; margin-left:20%" class="btn btn-warning" href="Home/ForosPublicados"> Mira todos los trailers! <img src="~/Content/img/verMovie.png" style="height:30px ; " width: 30px" /></a>
         </div>
     </div>
 
     @if (User.Identity.IsAuthenticated)
     {
         <div>
-            <a style="color:white; margin-left:45%; margin-bottom:2%" class="btn btn-primary" href="Home/nuevoPost"> Agregar trailer <img src="~/Content/img/AddMovie.png" style="height:30px ; " width: 30px" /></a>
+            <a style="color:white; margin-left:45%; margin-bottom:2%" class="btn btn-danger" href="Home/nuevoPost"> Agregar trailer  <img src="~/Content/img/AddMovie.png" style="height:30px ; " width: 30px" /></a>
 
         </div>
     }
@@ -62,13 +62,13 @@
                         @if (User.Identity.IsAuthenticated)
                         {
                             <div class="card-footer" style="text-align:center">
-                                <a class="btn btn-primary btn-sm" href="@Html.DisplayFor(modelItem => item.url)">Editar Trailer  <img src="~/Content/img/editMovie.png" style="height:20px ; " width: 20px" /></a>
-                                <a class="btn btn-danger btn-sm" href="@Html.DisplayFor(modelItem => item.url)">Eliminar Trailer  <img src="~/Content/img/deleteMovie.png" style="height:20px ; " width: 20px" /></a>
+                                <a class="btn btn-warning " href="@Html.DisplayFor(modelItem => item.url)">Editar Trailer  <img src="~/Content/img/editMovie.png" style="height:20px ; " width: 20px" /></a>
+                                <a class="btn btn-danger " href="@Html.DisplayFor(modelItem => item.url)">Eliminar Trailer  <img src="~/Content/img/deleteMovie.png" style="height:20px ; " width: 20px" /></a>
                             </div>
                         }
                         else
                         {
-                            <div class="card-footer" style="text-align:center"><a class="btn btn-primary btn-sm" href="@Html.DisplayFor(modelItem => item.url)">Ver en YouTube  <img src="~/Content/img/yt.png" style="height:20px ; " width: 20px" /></a></div>
+                            <div class="card-footer" style="text-align:center"><a class="btn btn-warning " href="@Html.DisplayFor(modelItem => item.url)">Ver en YouTube  <img src="~/Content/img/yt.png" style="height:20px ; " width: 20px" /></a></div>
                         }
                     </div>
                 </div>

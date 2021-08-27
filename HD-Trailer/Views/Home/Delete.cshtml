@@ -4,9 +4,9 @@
     ViewBag.Title = "Delete";
 }
 
-<h2>Delete</h2>
+<h2>Eliminar Trailer</h2>
 
-<h3>Are you sure you want to delete this?</h3>
+<h3>Estas seguro?</h3>
 <div>
     <h4>Trailers</h4>
     <hr />
@@ -40,9 +40,12 @@
     @using (Html.BeginForm()) {
         @Html.AntiForgeryToken()
 
-        <div class="form-actions no-color">
-            <input type="submit" value="Delete" class="btn btn-default" /> |
-            @Html.ActionLink("Regresar", "ForosPublicados")
-        </div>
+<div class="form-actions no-color">
+    <center>
+        <button class="btn btn-warning" type="submit"><img src="~/Content/img/AddMovie.png" style="height:30px ; " width: 30px" /> Guardar cambios</button>
+    </center> |
+
+    @Html.ActionLink("Regresar", "ForosPublicados")
+</div>
     }
 </div>

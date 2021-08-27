@@ -11,12 +11,16 @@ namespace HD_Trailer
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+
     public partial class youtube
     {
         public int id { get; set; }
+        [Display(Name ="Titulo")]
         public string nombre { get; set; }
+        [Display(Name = "Descripcion")]
         public string descripcion { get; set; }
+        [Display(Name = "URL")]
         public string url { get; set; }
     }
 }
