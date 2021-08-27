@@ -11,17 +11,20 @@
                 </center>
                 <h2 class="user_unregistered-title">¿Eres #Admin?</h2>
                 <p class="user_unregistered-text">Registra cuentas para otros administradores!</p>
-                <button class="user_unregistered-signup" id="signup-button">Registrate</button>
+                <center>
+                    <button class="user_unregistered-signup" id="signup-button"><img src="~/Content/img/pop.png" alt="logo" style="height: 30px; width: 30px " /> Registrate</button>
+                </center>
             </div>
 
             <div class="user_options-registered"style=" background-color: #dc3545">
                 <center>
                     <img  src="~/Content/img/cerrajero.png" alt="logo" style="height: 70px; width: 70px "/>
                 </center>
-                <h2 class="user_registered-title">¿Quieres agregar nuevas peliculas?</h2>
+                <h2 class="user_registered-title">¿Agregar nuevos trailers?</h2>
                 <p class="user_registered-text">Accede a tu cuenta de admin.</p>
-
-                <button class="user_registered-login" id="login-button">Inicia Sesion</button>
+                <center>
+                    <button class="user_registered-login" id="login-button"><img src="~/Content/img/pop.png" alt="logo" style="height: 30px; width: 30px " /> Inicia Sesion</button>
+                </center>
             </div>
         </div>
 
@@ -30,7 +33,7 @@
                 @using (Html.BeginForm("InicioSesion", "Home"))
                 {
                     @Html.AntiForgeryToken()                                  
-                    <h2 class="forms_title" style="padding-top: 30px">Inicia Sesion</h2>
+                    <h2 class="forms_title" style="padding-top: 30px"><img src="~/Content/img/logopag.png" alt="logo" style="height: 40px; width: 40px " /> Inicia Sesion </h2> 
                     <form class="forms_form">
                         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
                         <fieldset class="forms_fieldset">
@@ -45,7 +48,7 @@
                             </div>
                         </fieldset>
 
-                        <div class="forms_buttons">
+                        <div class="forms_buttons" >                           
                             <input type="submit" value="Accede" class="forms_buttons-action" style=" color: #ffc107">
 
                         </div>
@@ -62,7 +65,7 @@
             <div class="user_forms-signup">
                 @using (Html.BeginForm("Registro", "Home"))
                 {
-                    <h2 class="forms_title" style="padding-top: 30px">Registrate</h2>
+                    <h2 class="forms_title" style="padding-top: 30px"><img src="~/Content/img/logopag.png" alt="logo" style="height: 40px; width: 40px " /> Registrate</h2>
                     <form class="forms_form">
                         <fieldset class="forms_fieldset">
                             

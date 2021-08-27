@@ -187,8 +187,12 @@
     <Content Include="Content\img\enter.png" />
     <Content Include="Content\img\fondo 2.jpg" />
     <Content Include="Content\img\girl.jpg" />
+    <Content Include="Content\img\logopag.png" />
+    <Content Include="Content\img\new.png" />
     <Content Include="Content\img\notas.png" />
     <Content Include="Content\img\obed.jpg" />
+    <Content Include="Content\img\pop.png" />
+    <Content Include="Content\img\popcorn.png" />
     <Content Include="Content\img\publicacion-de-invitado %281%29.png" />
     <Content Include="Content\img\registrarse.png" />
     <Content Include="Content\img\ro.jpg" />

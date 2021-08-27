@@ -4,14 +4,11 @@
     ViewBag.Title = "Delete";
 }
 
-<h2>Eliminar Trailer</h2>
 
-<h3>Estas seguro?</h3>
 <div>
-    <h4>Trailers</h4>
-    <hr />
+
     <dl class="dl-horizontal">
-        <dt>
+        <dt style="color: #dc3545; font-size:24px; padding-top:20px">
             @Html.DisplayNameFor(model => model.nombre)
         </dt>
 
@@ -19,7 +16,7 @@
             @Html.DisplayFor(model => model.nombre)
         </dd>
 
-        <dt>
+        <dt style="color: #dc3545; font-size:24px; padding-top:20px">
             @Html.DisplayNameFor(model => model.descripcion)
         </dt>
 
@@ -27,7 +24,7 @@
             @Html.DisplayFor(model => model.descripcion)
         </dd>
 
-        <dt>
+        <dt style="color: #dc3545; font-size:24px; padding-top:20px">
             @Html.DisplayNameFor(model => model.url)
         </dt>
 
@@ -37,15 +34,16 @@
 
     </dl>
 
-    @using (Html.BeginForm()) {
+    @using (Html.BeginForm())
+    {
         @Html.AntiForgeryToken()
 
-<div class="form-actions no-color">
-    <center>
-        <button class="btn btn-warning" type="submit"><img src="~/Content/img/AddMovie.png" style="height:30px ; " width: 30px" /> Guardar cambios</button>
-    </center> |
+        <h2 style="padding-top:20px; padding-bottom:20px">Estas seguro de querer eliminar este trailer?</h2>
 
-    @Html.ActionLink("Regresar", "ForosPublicados")
-</div>
+        <div class="form-actions no-color">
+            <center>
+                <button class="btn btn-warning" type="submit"><img src="~/Content/img/pop.png" style="height:30px ; " width: 30px"; padding-top:20px; /> Eliminar</button>
+            </center> 
+        </div>
     }
 </div>

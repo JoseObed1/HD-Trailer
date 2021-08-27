@@ -6,7 +6,7 @@
     <link href="~/css/styles.css" rel="stylesheet" />
 
     <center>
-        <img src="~/Content/img/blog.png" alt="logo" style="height: 120px; width: 100px ; padding-top: 20px" />
+        <img src="~/Content/img/popcorn.png" alt="logo" style="height: 120px; width: 100px ; padding-top: 20px" />
     </center>
 
     <div class="mb-3">
@@ -21,7 +21,7 @@
 
     <div class="mb-3">
         <label for="validationTextarea" class="form-label" style="padding-top: 15px  ;color:#dc3545">Descripcion del trailer</label><br />
-        @Html.TextAreaFor(model => model.descripcion, new { @class = "form-control forms_field-input", @placeholder = "Informacion necesaria..." })
+        @Html.TextAreaFor(model => model.descripcion, new { @class = "form-control forms_field-input ", @placeholder = "Informacion necesaria..." })
         @*
             <textarea class="form-control is-invalid" id="validationTextarea" required @Html.EditorFor(model => model.Descripcion, new { htmlAttributes = new { @class = "form-control forms_field-input", @placeholder = "Informacion necesaria..." } })</textarea>
         *@
@@ -42,7 +42,7 @@
 
         <div class="mb-3" style=" padding-top:30px">
             <center>
-                <button class="btn btn-warning" type="submit"><img src="~/Content/img/AddMovie.png" style="height:30px ; " width: 30px" /> Publicar Trailer</button>
+                <button class="btn btn-warning" type="submit"><img src="~/Content/img/new.png" style="height:40px ; " width: 40px" /> Publicar Trailer</button>
             </center>
         </div>
         }

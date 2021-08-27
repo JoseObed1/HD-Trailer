@@ -3,53 +3,59 @@
 @{
     ViewBag.Title = "Edit";
 }
-
-<h2>Edita</h2>
+<center>
+    <h2 style="padding-top:30px; color: #dc3545 "></h2>
+</center>
 
 @using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
 
-<div class="form-horizontal">
-    <hr />
-    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-    @Html.HiddenFor(model => model.id)
+    <center>
+        <img src="~/Content/img/popcorn.png" alt="logo" style="height: 120px; width: 100px ; padding-top: 20px" />
+    </center>
 
-    <div class="form-group" style="color: #dc3545; font-size:24px">
-        @Html.LabelFor(model => model.nombre, htmlAttributes: new { @class = "control-label col-md-2" })
-        <div class="col-md-10">
-            @Html.EditorFor(model => model.nombre, new { htmlAttributes = new { @class = "form-control" } })
-            @Html.ValidationMessageFor(model => model.nombre, "", new { @class = "text-danger" })
-        </div>
-    </div>
+    <center>
 
-    <div class="form-group" style="color: #dc3545; font-size:24px">
-        @Html.LabelFor(model => model.descripcion, htmlAttributes: new { @class = "control-label col-md-2" })
-        <div class="col-md-10">
-            @Html.EditorFor(model => model.descripcion, new { htmlAttributes = new { @class = "form-control" } })
-            @Html.ValidationMessageFor(model => model.descripcion, "", new { @class = "text-danger" })
-        </div>
-    </div>
+        <div class="form-horizontal">
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+            @Html.HiddenFor(model => model.id)
 
-    <div class="form-group"  style="color: #dc3545; font-size:24px">
-        @Html.LabelFor(model => model.url, htmlAttributes: new { @class = "control-label col-md-2" })
-        <div class="col-md-10">
-            @Html.EditorFor(model => model.url, new { htmlAttributes = new { @class = "form-control" } })
-            @Html.ValidationMessageFor(model => model.url, "", new { @class = "text-danger" })
-        </div>
-    </div>
+            <div class="form-group" style="color: #dc3545; font-size:24px; padding-top:20px">
+                @Html.LabelFor(model => model.nombre, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.nombre, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.nombre, "", new { @class = "text-danger" })
+                </div>
+            </div>
 
-    <div class="form-group">
-        <div class="col-md-offset-2 col-md-10">
-            <center>
-                <button class="btn btn-warning" type="submit"><img src="~/Content/img/AddMovie.png" style="height:30px ; " width: 30px" /> Guardar cambios</button>
-            </center>
+            <div class="form-group" style="color: #dc3545; font-size:24px">
+                @Html.LabelFor(model => model.descripcion, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.descripcion, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.descripcion, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group" style="color: #dc3545; font-size:24px">
+                @Html.LabelFor(model => model.url, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.url, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.url, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <center>
+                        <button class="btn btn-warning" type="submit"><img src="~/Content/img/new.png" style="height:30px ; " width: 30px" /> Guardar cambios</button>
+                    </center>
+                </div>
+            </div>
         </div>
-    </div>
-</div>
+    </center>
 }
 
 <div>
-    @Html.ActionLink("Volver atras", "Index")
 </div>
 
